@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50634/FindUser.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" />
+  <xs:element name="findUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userInf" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="findUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" minOccurs="0" name="findUserResult" nillable="true" type="q1:ArrayOftblFoundUsers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CurrentUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SelectedUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" minOccurs="0" name="getUserResult" nillable="true" type="q2:tblUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

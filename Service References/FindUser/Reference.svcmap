@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="eb44d045-d459-4238-995f-9d57aef60547" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50634/FindUser.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FindUser.xsd" MetadataType="Schema" ID="6e521a97-0436-4e4e-9657-2e3252a9213a" SourceId="1" SourceUrl="http://localhost:50634/FindUser.svc?xsd=xsd0" />
+    <MetadataFile FileName="FindUser1.xsd" MetadataType="Schema" ID="6c209369-de27-4551-8b4e-7978bde1889c" SourceId="1" SourceUrl="http://localhost:50634/FindUser.svc?xsd=xsd2" />
+    <MetadataFile FileName="FindUser.wsdl" MetadataType="Wsdl" ID="09da932b-d692-4b30-a8bb-2dbbef36800a" SourceId="1" SourceUrl="http://localhost:50634/FindUser.svc?wsdl" />
+    <MetadataFile FileName="FindUser.disco" MetadataType="Disco" ID="25946075-09fa-4fbb-9e56-dbf3db34c081" SourceId="1" SourceUrl="http://localhost:50634/FindUser.svc?disco" />
+    <MetadataFile FileName="FindUser2.xsd" MetadataType="Schema" ID="bf144d52-6de1-49ab-a10a-cc1c3da935c5" SourceId="1" SourceUrl="http://localhost:50634/FindUser.svc?xsd=xsd3" />
+    <MetadataFile FileName="FindUser3.xsd" MetadataType="Schema" ID="e60ae7a9-5ee1-49fe-902b-266f955d00ec" SourceId="1" SourceUrl="http://localhost:50634/FindUser.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

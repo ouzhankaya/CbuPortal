@@ -1,0 +1,213 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-sm-12 col-xs-8" style="margin-left:auto;margin-right:auto">
+        <section class="experience section">
+            <section class="experience section">
+                <div class="section-inner">
+                    <!--<div class="row">
+                        <div class="content">
+                            <textarea id="status"tweetEnter rows="5" style="width:100%; margin:auto"></textarea>
+                        </div>
+                        <div class="content-footer" style="padding-top:10px">
+                            <input class="btn btn-large btn-primary pull-right" type="submit" id="btnPost" value="Post">
+                        </div>
+                    </div>-->
+                    <div class="card-panel tweetInputOut">
+                        <input placeholder="Write Comment..." id="status" type="text" class="txtPost">
+                        <div  class="col m12" id="tweetFooter">
+                            <button class="btn btn-white btn-xs pull-right" id="btnPost" style="margin-top:-4px;" disabled type="submit"> Share </button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!---->
+            <div id="Shares">
+                <div class="sk-spinner sk-spinner-chasing-dots">
+                    <div class="sk-dot1"></div>
+                    <div class="sk-dot2"></div>
+                    
+                </div>
+            </div>
+            <!---->
+        </section><!--//section-->
+
+    </div><!--//primary-->
+</div><!--//row-->
+
+<script>
+    var id = "@ViewBag.id";
+    $(function () {
+        $("#btnPost").click(function () {
+            var Share = $("#status").val();
+
+            $.ajax({
+                url: "/Data/Paylas",
+                method: "POST",
+                data: { Share: Share },
+                success: function (response) {
+
+                    begen = '<p class="like" data-placement="left"  data-toggle="tooltip" title=" "><small style"font-size: 70%;"></small></p>';
+                    var d = paylasilan(response.nameSurname, date(response.dt), response.text, response.resim, begen, response.id, response.userId)
+                    d += '<div class="social-footer"><div  style="display:none" class="social-comment CommRow "><a href="" class="pull-left"><img alt="image" src="~/Image/profile.jpg"> </a><div class="media-body"> <textarea class="form-control" placeholder="Write comment..."></textarea><button class="btn btn-white btn-xs pull-right" onClick="SendComment($(this),\'' + response.id + '\')"text="Send"> Share</button> </div></div></div></div>';
+
+                    $("#Shares").prepend($(d).fadeIn("slow"));
+                    $("#status").val("");
+                }
+            });
+        });
+
+
+
+        $.ajax({
+            url: "/Data/Paylasilanlar",
+            method: "POST",
+            success: function (response) {
+                var paylasilanlar = "";
+                var yorumlar = '<div class="social-footer">';
+                $.each(response, function (index, value) {
+                    console.log(value);
+                    var begen = "";
+                    var LikeList = "";
+                    if (value.shareLikes.length != 0) {
+                        $.each(value.shareLikes, function (index, value) {
+                            LikeList += value.ShareLikeUserNameSurname + "\n";
+                        });
+                        begen = '<p class="like" data-toggle="tooltip" data-placement="left" title="' + LikeList + '" ><small style"font-size: 70%;"><i style="color:#479fc8;" class="fa fa-thumbs-up"></i>' + value.shareLikes.length + 'like</small></p>';
+                        LikeList = "";
+                    } else {
+                        begen = '<p class="like" data-placement="left"  data-toggle="tooltip" title=" "><small style"font-size: 70%;"></small></p>';
+                    }
+                    var id = getId(value._id);
+                    var Uid = getId(value.UserID);
+                    paylasilanlar += paylasilan(value.sharingUserNameSurname, date(value.SharingDate), value.SharingText, value.sharinUserAvatar, begen, id, Uid, value.userShareLike);
+                    $.each(value.shareComments, function (index, value) {
+                        var Userid = getId(value.SharesCommentUsersID)
+                        var Yid = getId(value._id)
+                        yorumlar += yorum(value.ShareCommentUserNameSurname, date(value.SharesCommentDate), value.SharesCommentText, value.avatar, Userid,Yid)
+
+                    })
+
+                    paylasilanlar += yorumlar + '<div  style="display:none" class="social-comment CommRow "><a href="" class="pull-left"> <img alt="image" src="/Image/@ViewBag.ActiveAvatar"></a><div class="media-body"> <textarea class="form-control" placeholder="Write comment..."></textarea><button class="btn btn-white btn-xs pull-right" onclick="SendComment($(this),\'' + id + '\')" text="Send"> Share</button> </div></div></div></div>';
+                    yorumlar = '<div class="social-footer">';
+
+                });
+                $("#Shares").html(paylasilanlar);
+                $('[data-toggle="tooltip"]').tooltip();
+
+            },
+            error: function () {
+                debugger;
+            }
+
+        })
+
+    })
+
+
+    function date(s) {
+        var pattern = /Date\(([^)]+)\)/;
+        var results = pattern.exec(s);
+        var time = new Date(parseFloat(results[1]));
+        //  var d = prettyDate("20016-12-04T00:17:46+0000");// TODO: Sonra Bak
+        return time.toDateString();;
+
+    }
+    var paylasilan = function (adSoyad, tarih, paylasilandata, resim, begeni, id, Uid, begendi) {
+        if (Uid == activeId) {
+            if (begendi)
+                var data = '<div class="social-feed-box"><div class="social-avatar"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"class="pull-left"><img alt="image" class="img-circle" src="/Image/' + resim + '"></a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + adSoyad + '</strong></a> <i class="fa fa-times" onclick="PaylasimSil($(this),\'' + id + '"\')" style="float:right" aria-hidden="true"></i><small class="text-muted">' + tarih + '</small></div></div><div class="social-body"><p>' + paylasilandata + '</p>' + begeni + '<div  class="btn-group"><button  onclick="Like(' + "'" + id + "'" + ',$(this),false)" id="btnLike" class="btn btn-primary btn-xs"><i class="fa fa-thumbs-up"></i> Beğen</button><button onClick="showCommentRow($(this))" class="btn btn-white btn-xs comm"><i class="fa fa-comments"></i> Yorum Yap</button></div></div><input name="id" type="hidden" value="' + id + '"/> ';
+            else
+                var data = '<div class="social-feed-box"><div class="social-avatar"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"class="pull-left"><img alt="image" class="img-circle" src="/Image/' + resim + '"></a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + adSoyad + '</strong></a><i class="fa fa-times" onclick="PaylasimSil($(this),\'' + id + '\')" style="float:right" aria-hidden="true"></i><small class="text-muted">' + tarih + '</small></div></div><div class="social-body"><p>' + paylasilandata + '</p>' + begeni + '<div  class="btn-group"><button  onclick="Like(' + "'" + id + "'" + ',$(this),true)" id="btnLike" class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Beğen</button><button onClick="showCommentRow($(this))" class="btn btn-white btn-xs comm"><i class="fa fa-comments"></i> Yorum Yap</button></div></div><input name="id" type="hidden" value="' + id + '"/> ';
+        }
+        else {
+            if (begendi)
+                var data = '<div class="social-feed-box"><div class="social-avatar"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"class="pull-left"><img alt="image" class="img-circle" src="/Image/' + resim + '"></a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + adSoyad + '</strong></a><small class="text-muted">' + tarih + '</small></div></div><div class="social-body"><p>' + paylasilandata + '</p>' + begeni + '<div  class="btn-group"><button  onclick="Like(' + "'" + id + "'" + ',$(this),false)" id="btnLike" class="btn btn-primary btn-xs"><i class="fa fa-thumbs-up"></i> Beğen</button><button onClick="showCommentRow($(this))" class="btn btn-white btn-xs comm"><i class="fa fa-comments"></i> Yorum Yap</button></div></div><input name="id" type="hidden" value="' + id + '"/> ';
+            else
+                var data = '<div class="social-feed-box"><div class="social-avatar"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"class="pull-left"><img alt="image" class="img-circle" src="/Image/' + resim + '"></a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + adSoyad + '</strong></a><small class="text-muted">' + tarih + '</small></div></div><div class="social-body"><p>' + paylasilandata + '</p>' + begeni + '<div  class="btn-group"><button  onclick="Like(' + "'" + id + "'" + ',$(this),true)" id="btnLike" class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Beğen</button><button onClick="showCommentRow($(this))" class="btn btn-white btn-xs comm"><i class="fa fa-comments"></i> Yorum Yap</button></div></div><input name="id" type="hidden" value="' + id + '"/> ';
+
+        }
+        return data;
+    }
+    var yorum = function (adSoyad, tarih, yorum, resim, Uid,Yid) {
+        if (Uid != id)
+            var data = ' <div class="social-comment"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '" class="pull-left"><img alt="image" src="/Image/' + resim + '"> </a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '">' + adSoyad + '</a> ' + yorum + '<br> ' + tarih + '</small> </div></div>';
+        else
+            var data = ' <div class="social-comment"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '" class="pull-left"><img alt="image" src="/Image/' + resim + '"> </a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '">' + adSoyad + '</a> ' + yorum + '<i class="fa fa-times" onClick="yorumSil($(this),\'' + Yid + '\')" style="float:right" aria-hidden="true"></i><br> ' + tarih + '</small> </div></div>';
+
+        return data;
+    }
+    var Like = function (id, e, status) {
+        debugger;
+        $.ajax({
+            url: "/Data/Begen",
+            method: "POST",
+            data: { id: id, status: status },
+            success: function (response) {
+                var LikeList = e.parent().parent().children('.like').attr("data-original-title");
+                if (LikeList == undefined)
+                    LikeList = "";
+                var text = e.parent().parent().children('.like').text();
+                text = text.replace('like', '');
+                if (status) {
+                    begen = '<small style"font-size: 70%;"><i style="color:#479fc8;" class="fa fa-thumbs-up"></i>' + ++text + 'like</p></small>';
+                    e.parent().parent().children('.like').html(begen);
+                    e.attr("onClick", "Like('" + id + "',$(this),false)");
+                    e.attr("class", "btn btn-primary  btn-xs");
+                    e.parent().parent().children('.like').attr("data-original-title", LikeList + "You \n");
+                    e.parent().parent().children('.like').attr("title", LikeList + "You \n");
+
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
+                else {
+                    if (text != 1)
+                        begen = '<small style"font-size: 70%;"><i style="color:#479fc8;" class="fa fa-thumbs-up"></i>' + --text + 'like</small>';
+                    else
+                        begen = '<small style"font-size: 70%;"></small>';
+                    e.parent().parent().children('.like').html(begen);
+                    e.attr("onClick", "Like('" + id + "',$(this),true)");
+                    e.attr("class", "btn btn-white  btn-xs");
+                    LikeList = LikeList.replace("@ViewBag.FullName" + "\n", "");
+                    LikeList = LikeList.replace("You \n", "");
+                    e.parent().parent().children('.like').attr("data-original-title", LikeList);
+                    $('[data-toggle="tooltip"]').tooltip();
+
+
+                }
+
+            }
+        });
+    }
+
+
+    var showCommentRow = function (e) {
+        debugger;
+        var a = e.parent().parent().parent();
+        var d = a.children('.social-footer').children('.CommRow').slideToggle();//TODO: Hide true false yap
+
+
+    }
+
+    var SendComment = function (e, id) {
+        var text = e.parent().children('.form-control').val();
+        console.log(text);
+        $.ajax({
+            url: "/Data/YorumYap",
+            method: "POST",
+
+            data: { id: id, content: text },
+            success: function (response) {
+                debugger;
+                var d = yorum('@ViewBag.FullName', '@DateTime.Now', text, '@ViewBag.Avatar', '@ViewBag.id',"")
+
+                e.parent().parent().before(d);
+            }
+        });
+    }
+
+</script>

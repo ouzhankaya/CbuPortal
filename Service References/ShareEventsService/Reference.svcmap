@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2b367d45-eeb3-48a9-a8d3-1a5de3f31381" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50634/ShareEvents.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ShareEvents.disco" MetadataType="Disco" ID="a8c7b50c-075c-4e26-95fe-e648a60d1e6c" SourceId="1" SourceUrl="http://localhost:50634/ShareEvents.svc?disco" />
+    <MetadataFile FileName="Share.wsdl" MetadataType="Wsdl" ID="f93b1abe-a606-4e57-9d61-bf0477164c07" SourceId="1" SourceUrl="http://localhost:50634/ShareEvents.svc?wsdl" />
+    <MetadataFile FileName="ShareEvents.xsd" MetadataType="Schema" ID="20bae3cf-f2ab-417a-a14a-7ad7ce13f9e7" SourceId="1" SourceUrl="http://localhost:50634/ShareEvents.svc?xsd=xsd1" />
+    <MetadataFile FileName="ShareEvents1.xsd" MetadataType="Schema" ID="52521ae9-ccec-466e-9c2a-bbd95da6c415" SourceId="1" SourceUrl="http://localhost:50634/ShareEvents.svc?xsd=xsd0" />
+    <MetadataFile FileName="ShareEvents2.xsd" MetadataType="Schema" ID="7971baa6-9a98-4512-8de1-457020f6d143" SourceId="1" SourceUrl="http://localhost:50634/ShareEvents.svc?xsd=xsd4" />
+    <MetadataFile FileName="ShareEvents3.xsd" MetadataType="Schema" ID="4bc5ad84-e2e5-4d56-8750-0ae710119902" SourceId="1" SourceUrl="http://localhost:50634/ShareEvents.svc?xsd=xsd3" />
+    <MetadataFile FileName="ShareEvents4.xsd" MetadataType="Schema" ID="f4695da4-e889-48fb-a885-2d74a0d4b801" SourceId="1" SourceUrl="http://localhost:50634/ShareEvents.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,361 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="primary col-md-8 col-sm-12 col-xs-12">
+        <section class="experience section">
+            <section class="experience section">
+                @if (ViewBag.following == null)
+                {
+                    <div class="section-inner">
+
+                        <div class="card-panel tweetInputOut">
+                            <input placeholder="Write Comment..." id="status" type="text" class="txtPost">
+                            <div class="pull-right" id="tweetFooter">
+                                <button class="btn btn-white btn-xs pull-left" id="btnPost" style="margin-top:-4px;" enabled type="submit"> Image </button>
+                                <button class="btn btn-white btn-xs pull-left" id="btnPost" style="margin-top:-4px;" enabled type="submit"> Video </button>
+                                <button class="btn btn-white btn-xs pull-right" id="btnPost" style="margin-top:-4px;"  disabled type="submit"> Share </button>
+                            </div>
+                            <script>
+                                $("#status").keypress(function () {
+                                    debugger
+                                    if($("#status").val()!="")
+                                    {
+                                        $("#btnPost").prop('disabled', false);
+                                    }
+                                    else {
+
+                                        $("#btnPost").prop('disabled', true);
+                                    }
+                                });
+
+                            </script>
+                        </div>
+                    </div>
+                }
+            </section>
+            <div id="Shares">
+                <div class="sk-spinner sk-spinner-chasing-dots">
+                    <div class="sk-dot1"></div>
+                    <div class="sk-dot2"></div>
+                </div>
+            </div>
+
+        </section><!--//section-->
+
+    </div><!--//primary-->
+
+    <div class="secondary col-md-4 col-sm-12 col-xs-12">
+        @*<aside class="info aside section">
+                <div class="section-inner">
+
+                    <div class="content">
+
+                        <textarea id="status" rows="5" style="width:300px"></textarea>
+                        <span id="text_counter">Characters left: 250</span><input class="btn btn-large btn-primary pull-right" type="submit" id="btn" value="Post">
+                        <br>
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </aside><!--//aside-->*@
+        <aside class="info aside section">
+            <div class="section-inner">
+                <h2 class="heading">Takip Edilen <a href="#" data-toggle="modal" data-target="#followedModal">(Daha Fazla)</a></h2>
+                <div id="followedModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Takip Edilenler</h4>
+                            </div>
+                            <div class="modal-body follow-list">
+                                <div class="project-list">
+
+                                    <table class="table table-hover">
+                                        <tbody id="Takipler"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="content">
+                    <ul id="followed" class="social list-inline"></ul>
+                </div><!--//content-->
+            </div><!--//section-inner-->
+
+            <div class="section-inner">
+                <h2 class="heading">Takipçiler <a href="#" data-toggle="modal" data-target="#followerModal">(Daha Fazla)</a></h2>
+                <div id="followerModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Takipçiler</h4>
+                            </div>
+                            <div class="modal-body follow-list">
+                                <div class="project-list">
+
+                                    <table class="table table-hover">
+                                        <tbody id="Takipciler"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <ul id="follower" class="social list-inline"></ul>
+                </div><!--//content-->
+            </div><!--//section-inner-->
+        </aside><!--//aside-->
+        
+
+    </div><!--//secondary-->
+</div><!--//row-->
+
+<script>
+    $(function () {
+
+        $.ajax({
+            url: "/Data/Following",
+            method: "POST",   //TODO: Emrah Servisten Takip Etme olayı
+            data: { sno: id },
+            success: function (response) {
+                var data = "";
+                var modaldata = "";
+                var i = 0;
+                $.each(response, function (index, value) {
+                    i++
+                    var Uid = getId(value.userID);
+                    data += '<li> <a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><img  data-toggle="tooltip" title="' + value.nameSurname + '" id="daire" style="height:38px;" src="/Image/' + value.Avatar + '"></a></li>'
+                    modaldata += ' <tr><td class="project-people"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><img alt="image" class="img-circle"src="/Image/' + value.Avatar + '"></a></td><td class="project-title"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + value.nameSurname + '</strong></a></td> </tr>';
+                    if (i == 6)
+                        return false;
+                })
+                $("#Takipciler").html(modaldata);
+                $("#follower").append(data);
+                $('[data-toggle="tooltip"]').tooltip();
+
+            }
+        });
+        $.ajax({
+            url: "/Data/Followers",
+            method: "POST",
+            data: { sno: id },
+            success: function (response) {
+                var data = "";
+                var modaldata = "";
+                var i = 0;
+                $.each(response, function (index, value) {
+                    i++;
+                    var Uid = getId(value.userID);
+                    data += '<li> <a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><img  data-toggle="tooltip" title="' + value.nameSurname + '" id="daire" style="height:38px;" src="/Image/' + value.Avatar + '"></a></li>'
+                    modaldata += ' <tr><td class="project-people"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><img alt="image" class="img-circle"src="/Image/' + value.Avatar + '"></a></td><td class="project-title"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + value.nameSurname + '</strong></a></td> </tr>';
+
+                    if (i == 6)
+                        return false;
+
+                })
+                $("#Takipler").html(modaldata);
+                $("#followed").append(data);
+                $('[data-toggle="tooltip"]').tooltip();
+
+            }
+        });
+
+        $("#btnPost").click(function () {
+            var Share = $("#status").val();
+            $.ajax({
+                url: "/Data/Paylas",
+                method: "POST",
+                data: { Share: Share },
+                success: function (response) {
+                    debugger;
+                    var begen = '<p class="like" data-placement="left"  data-toggle="tooltip" title=" "><small style"font-size: 70%;"></small></p>';
+                    var d = paylasilan(response.nameSurname, date(response.dt), response.text, response.resim, begen, response.id, response.userId)
+                    d += '<div class="social-footer"><div  style="display:none" class="social-comment CommRow "><a href="" class="pull-left"> <img alt="image" src="/Image/profile.png"> </a><div class="media-body"> <textarea class="form-control" placeholder="Write comment..."></textarea><button class="btn btn-white btn-xs pull-right" onClick="SendComment($(this),\'' + id + '\')"text="Send"> Share</button> </div></div></div></div>';
+                    $("#Shares").prepend($(d).fadeIn("slow"));
+                    $("#status").val("");
+                }
+            });
+        });
+        $.ajax({
+            url: "/Data/Paylastiklarim",
+            method: "POST",
+            data: { sno: id },
+            success: function (response) {
+                var paylasilanlar = "";
+                var yorumlar = '<div class="social-footer">';
+                $.each(response, function (index, value) {
+                    console.log(value);
+                    var begen = "";
+                    var LikeList = "";
+                    if (value.shareLikes.length != 0) {
+                        $.each(value.shareLikes, function (index, value) {
+                            LikeList += value.ShareLikeUserNameSurname + "\n";
+                        });
+                        begen = '<p class="like" data-toggle="tooltip" data-placement="left" title="' + LikeList + '" ><small style"font-size: 70%;"><i style="color:#479fc8;" class="fa fa-thumbs-up"></i>' + value.shareLikes.length + 'like</small></p>';
+                        LikeList = "";
+                    } else {
+                        begen = '<p class="like" data-placement="left"  data-toggle="tooltip" title=" "><small style"font-size: 70%;"></small></p>';
+
+                    }
+                    var id = getId(value._id);
+                    var Uid = getId(value.UserID);
+                    paylasilanlar += paylasilan(value.sharingUserNameSurname, date(value.SharingDate), value.SharingText, value.sharinUserAvatar, begen, id, Uid, value.userShareLike);
+                    $.each(value.shareComments, function (index, value) {
+                        var Userid = getId(value.SharesCommentUsersID);
+                        var Yiid = getId(value._id);
+                        yorumlar += yorum(value.ShareCommentUserNameSurname, date(value.SharesCommentDate), value.SharesCommentText, value.avatar, Userid,Yiid)
+
+                    })
+                    paylasilanlar += yorumlar + '<div  style="display:none" class="social-comment CommRow "><a href="" class="pull-left"> <img alt="image" src="~/Image/@ViewBag.ActiveAvatar"> </a><div class="media-body"> <textarea class="form-control" placeholder="Write comment..."></textarea><button class="btn btn-white btn-xs pull-right" onClick="SendComment($(this),\'' + id + '\')"text="Send"> Share</button> </div></div></div></div>';
+                    yorumlar = '<div class="social-footer">';
+
+                });
+                $("#Shares").html(paylasilanlar);
+                $('[data-toggle="tooltip"]').tooltip();
+
+            },
+            error: function () {
+                debugger;
+            }
+
+        })
+
+    })
+    function date(s) {
+        var pattern = /Date\(([^)]+)\)/;
+        var results = pattern.exec(s);
+        var time = new Date(parseFloat(results[1]));
+        //  var d = prettyDate("20016-12-04T00:17:46+0000");// TODO: Sonra Bak
+        return time.toDateString();;
+
+    }
+    var paylasilan = function (adSoyad, tarih, paylasilandata, resim, begeni, id, Uid, begendi) {
+        if (Uid == activeId) {
+            if (begendi)
+                var data = '<div class="social-feed-box"><div class="social-avatar"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"class="pull-left"><img alt="image" class="img-circle" src="/Image/' + resim + '"></a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + adSoyad + '</strong></a> <i class="fa fa-times" onclick="PaylasimSil($(this),\'' + id + '\')" style="float:right" aria-hidden="true"></i><small class="text-muted">' + tarih + '</small></div></div><div class="social-body"><p>' + paylasilandata + '</p>' + begeni + '<div  class="btn-group"><button  onclick="Like(' + "'" + id + "'" + ',$(this),false)" id="btnLike" class="btn btn-primary btn-xs"><i class="fa fa-thumbs-up"></i> Beğen</button><button onClick="showCommentRow($(this))" class="btn btn-white btn-xs comm"><i class="fa fa-comments"></i> Yorum Yap</button></div></div><input name="id" type="hidden" value="' + id + '"/> ';
+            else
+                var data = '<div class="social-feed-box"><div class="social-avatar"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"class="pull-left"><img alt="image" class="img-circle" src="/Image/' + resim + '"></a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + adSoyad + '</strong></a><i class="fa fa-times" onclick="PaylasimSil($(this),\'' + id + '\')" style="float:right" aria-hidden="true"></i><small class="text-muted">' + tarih + '</small></div></div><div class="social-body"><p>' + paylasilandata + '</p>' + begeni + '<div  class="btn-group"><button  onclick="Like(' + "'" + id + "'" + ',$(this),true)" id="btnLike" class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Beğen</button><button onClick="showCommentRow($(this))" class="btn btn-white btn-xs comm"><i class="fa fa-comments"></i> Yorum Yap</button></div></div><input name="id" type="hidden" value="' + id + '"/> ';
+        }
+        else {
+            if (begendi)
+                var data = '<div class="social-feed-box"><div class="social-avatar"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"class="pull-left"><img alt="image" class="img-circle" src="/Image/' + resim + '"></a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + adSoyad + '</strong></a><small class="text-muted">' + tarih + '</small></div></div><div class="social-body"><p>' + paylasilandata + '</p>' + begeni + '<div  class="btn-group"><button  onclick="Like(' + "'" + id + "'" + ',$(this),false)" id="btnLike" class="btn btn-primary btn-xs"><i class="fa fa-thumbs-up"></i> Beğen</button><button onClick="showCommentRow($(this))" class="btn btn-white btn-xs comm"><i class="fa fa-comments"></i> Yorum Yap</button></div></div><input name="id" type="hidden" value="' + id + '"/> ';
+            else
+                var data = '<div class="social-feed-box"><div class="social-avatar"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"class="pull-left"><img alt="image" class="img-circle" src="/Image/' + resim + '"></a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '"><strong>' + adSoyad + '</strong></a><small class="text-muted">' + tarih + '</small></div></div><div class="social-body"><p>' + paylasilandata + '</p>' + begeni + '<div  class="btn-group"><button  onclick="Like(' + "'" + id + "'" + ',$(this),true)" id="btnLike" class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Beğen</button><button onClick="showCommentRow($(this))" class="btn btn-white btn-xs comm"><i class="fa fa-comments"></i> Yorum Yap</button></div></div><input name="id" type="hidden" value="' + id + '"/> ';
+
+        }
+        return data;
+    }
+    var yorum = function (adSoyad, tarih, yorum, resim, Uid,Yid) {
+        if (Uid != activeId)
+            var data = ' <div class="social-comment"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '" class="pull-left"><img alt="image" src="/Image/' + resim + '"> </a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '">' + adSoyad + '</a> ' + yorum + '<br> ' + tarih + '</small> </div></div>';
+        else
+            var data = ' <div class="social-comment"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '" class="pull-left"><img alt="image" src="/Image/' + resim + '"> </a><div class="media-body"><a href="' + base_url + 'Home/ShowProfile?id=' + Uid + '">' + adSoyad + '</a> ' + yorum + '<i class="fa fa-times" onClick="yorumSil($(this),\''+Yid+'\')" style="float:right" aria-hidden="true"></i><br> ' + tarih + '</small> </div></div>';
+
+        return data;
+    }
+    var Like = function (id, e, status) {
+        debugger;
+        $.ajax({
+            url: "/Data/Begen",
+            method: "POST",
+            data: { id: id, status: status },
+            success: function (response) {
+                var LikeList = e.parent().parent().children('.like').attr("data-original-title");
+                if (LikeList == undefined)
+                    LikeList = "";
+                var text = e.parent().parent().children('.like').text();
+                text = text.replace('like', '');
+                if (status) {
+                    begen = '<small style"font-size: 70%;"><i style="color:#479fc8;" class="fa fa-thumbs-up"></i>' + ++text + 'like</p></small>';
+                    e.parent().parent().children('.like').html(begen);
+                    e.attr("onClick", "Like('" + id + "',$(this),false)");
+                    e.attr("class", "btn btn-primary  btn-xs");
+                    e.parent().parent().children('.like').attr("data-original-title", LikeList + "You \n");
+                    e.parent().parent().children('.like').attr("title", LikeList + "You \n");
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
+                else {
+                    if (text != 1)
+                        begen = '<small style"font-size: 70%;"><i style="color:#479fc8;" class="fa fa-thumbs-up"></i>' + --text + 'like</small>';
+                    else
+                        begen = '<small style"font-size: 70%;"></small>';
+                    e.parent().parent().children('.like').html(begen);
+                    e.attr("onClick", "Like('" + id + "',$(this),true)");
+                    e.attr("class", "btn btn-white  btn-xs");
+                    LikeList = LikeList.replace("@ViewBag.ActiveFullName" + "\n", "");
+                    LikeList = LikeList.replace("You \n", "");
+                    e.parent().parent().children('.like').attr("data-original-title", LikeList);
+                    $('[data-toggle="tooltip"]').tooltip();
+
+                }
+
+            }
+        });
+    }
+
+
+    var showCommentRow = function (e) {
+        debugger;
+        var a = e.parent().parent().parent();
+        var d = a.children('.social-footer').children('.CommRow').slideToggle();
+
+
+    }
+
+
+
+
+    var Follow = function (Uid, followStatus) {
+        $.ajax({
+            url: "/Data/Takip",
+            method: "POST",
+            data: { id: Uid, FollowStatus: followStatus },
+            success: function (response) {
+                if (followStatus == "True") {
+                    $("#btnFollow").text("Unfollow");
+                    $("#btnFollow").attr("onClick", "Follow('@ViewBag.id','False')");
+                }
+                else {
+                    $("#btnFollow").text("Follow");
+                    $("#btnFollow").attr("onClick", "Follow('@ViewBag.id','True')");
+
+                }
+            }
+        });
+    }
+    var SendComment = function (e, id) {
+        var text = e.parent().children('.form-control').val();
+        console.log(text);
+        $.ajax({
+            url: "/Data/YorumYap",
+            method: "POST",
+
+            data: { id: id, content: text },
+            success: function (response) {
+                debugger;
+                var d = yorum('@ViewBag.ActiveFullName', '@DateTime.Now', text, '@ViewBag.ActiveAvatar', '@ViewBag.Activeid',"")
+                e.parent().parent().before(d);
+            }
+        });
+    }
+
+</script>

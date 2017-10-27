@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="77810c50-f63c-4de5-899a-d7c82562cebc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50634/FollowEvents.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FollowEvents.xsd" MetadataType="Schema" ID="63577a99-da69-485a-82a2-25e33283e3b3" SourceId="1" SourceUrl="http://localhost:50634/FollowEvents.svc?xsd=xsd1" />
+    <MetadataFile FileName="FollowEvents.wsdl" MetadataType="Wsdl" ID="a725171d-3231-4aec-8b5e-f3a258d3972d" SourceId="1" SourceUrl="http://localhost:50634/FollowEvents.svc?wsdl" />
+    <MetadataFile FileName="FollowEvents.disco" MetadataType="Disco" ID="2b42f977-b1e5-476e-af37-bc12ad44fd2d" SourceId="1" SourceUrl="http://localhost:50634/FollowEvents.svc?disco" />
+    <MetadataFile FileName="FollowEvents1.xsd" MetadataType="Schema" ID="e135c0d8-0c04-460c-8f0c-9b7a41b4c2dd" SourceId="1" SourceUrl="http://localhost:50634/FollowEvents.svc?xsd=xsd3" />
+    <MetadataFile FileName="FollowEvents2.xsd" MetadataType="Schema" ID="18a3d6de-9e91-4c46-b21f-3a1e2cc19fd3" SourceId="1" SourceUrl="http://localhost:50634/FollowEvents.svc?xsd=xsd0" />
+    <MetadataFile FileName="FollowEvents3.xsd" MetadataType="Schema" ID="80b04463-f0ee-4f03-b849-6769ef811214" SourceId="1" SourceUrl="http://localhost:50634/FollowEvents.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

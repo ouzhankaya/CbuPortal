@@ -1,0 +1,50 @@
+﻿.tweetOut{
+  height: 120px;
+  display: table;
+  width:100%;
+}
+.tweetIn{
+  display: table-cell;
+  vertical-align: middle;
+}
+.tweetIn p{
+  font-size: 15px;
+}
+.tweetInputOut{
+  /*border-style: solid;*/
+  border-color: gray;
+}
+.profileStatisticHeader{
+  padding-left: 15px;
+}
+
+.txtPost{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #479FC8;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all 0.3s;
+}
+
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    will-change: opacity, transform;
+    transition: .3s ease-out;
+}

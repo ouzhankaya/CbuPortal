@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Login.css">
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function () {
+            $('.message a').click(function () {
+                $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+            });
+        });
+
+    </script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form method="post" action="/Login/CreateUser" class="register-form">
+                <input name="UserName"  required type="text" placeholder="Name" />
+                <input name="Surname" required type="text" placeholder="Surname" />
+                <input name="Password"  required type="password" placeholder="Password" />
+                <input name="Email" required type="email" placeholder="Email" />
+                <button type="submit" >Create</button>
+                <p class="message">Already Have Account? <a href="#">Signin</a></p>
+            </form>
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+                <input type="email" required name="userName" placeholder="Email" />
+                <input type="password" required  name="password" placeholder="Password" />
+                <button type="submit">Login</button>
+                <p class="message">Need an account? <a href="#">Create</a></p>
+                <div class="form-group">
+                    <p class="text-danger"><strong>@ViewBag.Error </strong></p>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

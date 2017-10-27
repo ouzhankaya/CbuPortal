@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50634/NotificationEvents.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson" />
+  <xs:import schemaLocation="http://localhost:50634/NotificationEvents.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" />
+  <xs:complexType name="tblShareInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SharingDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SharingImages" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SharingText" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="UserID" type="q1:ObjectId" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q2:ObjectId" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" minOccurs="0" name="share" nillable="true" type="q3:tblShare" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" minOccurs="0" name="shareComments" nillable="true" type="q4:ArrayOftblSharesCommentInformation" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" minOccurs="0" name="shareLikes" nillable="true" type="q5:ArrayOftblShareLikeInformation" />
+      <xs:element minOccurs="0" name="sharinUserAvatar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sharingUserNameSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userShareLike" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblShareInformation" nillable="true" type="tns:tblShareInformation" />
+</xs:schema>

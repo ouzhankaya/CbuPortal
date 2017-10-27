@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Share" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50634/ShareEvents.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50634/ShareEvents.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50634/ShareEvents.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" />
+      <xsd:import schemaLocation="http://localhost:50634/ShareEvents.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson" />
+      <xsd:import schemaLocation="http://localhost:50634/ShareEvents.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IShareEvents_shareComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:shareComment" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_shareComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:shareCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_shareLike_InputMessage">
+    <wsdl:part name="parameters" element="tns:shareLike" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_shareLike_OutputMessage">
+    <wsdl:part name="parameters" element="tns:shareLikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_setShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:setShare" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_setShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_getUserShares_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserShares" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_getUserShares_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserSharesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_getFriendsShares_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFriendsShares" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_getFriendsShares_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFriendsSharesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_userDeleteShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:userDeleteShare" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_userDeleteShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:userDeleteShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_userCommentDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:userCommentDelete" />
+  </wsdl:message>
+  <wsdl:message name="IShareEvents_userCommentDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:userCommentDeleteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IShareEvents">
+    <wsdl:operation name="shareComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShareEvents/shareComment" message="tns:IShareEvents_shareComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShareEvents/shareCommentResponse" message="tns:IShareEvents_shareComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="shareLike">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShareEvents/shareLike" message="tns:IShareEvents_shareLike_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShareEvents/shareLikeResponse" message="tns:IShareEvents_shareLike_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShareEvents/setShare" message="tns:IShareEvents_setShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShareEvents/setShareResponse" message="tns:IShareEvents_setShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserShares">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShareEvents/getUserShares" message="tns:IShareEvents_getUserShares_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShareEvents/getUserSharesResponse" message="tns:IShareEvents_getUserShares_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFriendsShares">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShareEvents/getFriendsShares" message="tns:IShareEvents_getFriendsShares_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShareEvents/getFriendsSharesResponse" message="tns:IShareEvents_getFriendsShares_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="userDeleteShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShareEvents/userDeleteShare" message="tns:IShareEvents_userDeleteShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShareEvents/userDeleteShareResponse" message="tns:IShareEvents_userDeleteShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="userCommentDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShareEvents/userCommentDelete" message="tns:IShareEvents_userCommentDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShareEvents/userCommentDeleteResponse" message="tns:IShareEvents_userCommentDelete_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IShareEvents" type="tns:IShareEvents">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="shareComment">
+      <soap:operation soapAction="http://tempuri.org/IShareEvents/shareComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="shareLike">
+      <soap:operation soapAction="http://tempuri.org/IShareEvents/shareLike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setShare">
+      <soap:operation soapAction="http://tempuri.org/IShareEvents/setShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserShares">
+      <soap:operation soapAction="http://tempuri.org/IShareEvents/getUserShares" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFriendsShares">
+      <soap:operation soapAction="http://tempuri.org/IShareEvents/getFriendsShares" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userDeleteShare">
+      <soap:operation soapAction="http://tempuri.org/IShareEvents/userDeleteShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userCommentDelete">
+      <soap:operation soapAction="http://tempuri.org/IShareEvents/userCommentDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Share">
+    <wsdl:port name="BasicHttpBinding_IShareEvents" binding="tns:BasicHttpBinding_IShareEvents">
+      <soap:address location="http://localhost:50634/ShareEvents.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

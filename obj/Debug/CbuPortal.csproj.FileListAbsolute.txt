@@ -1,0 +1,159 @@
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\csc.exe
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\vbc.exe
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\VBCSCompiler.exe
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\CbuPortal.dll.config
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\CbuPortal.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\CbuPortal.pdb
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\Antlr3.Runtime.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\CbuPortal.Entity.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\MongoDB.Bson.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\MongoDB.Driver.Core.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\MongoDB.Driver.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\MongoDB.Driver.Legacy.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\Newtonsoft.Json.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.Helpers.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.Mvc.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.Optimization.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.Razor.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.WebPages.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\WebGrease.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\CbuPortal.Entity.pdb
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\MongoDB.Bson.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\MongoDB.Driver.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\MongoDB.Driver.Core.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\MongoDB.Driver.Legacy.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.Helpers.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.Mvc.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.Optimization.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.Razor.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.WebPages.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\System.Web.WebPages.Razor.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\Antlr3.Runtime.pdb
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\Newtonsoft.Json.xml
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\obj\Debug\CbuPortal.csprojResolveAssemblyReference.cache
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\obj\Debug\CbuPortal.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\obj\Debug\CbuPortal.pdb
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ozbaysar\Documents\Visual Studio 2015\Projects\CbuPortal\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\csc.exe
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\vbc.exe
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\VBCSCompiler.exe
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\CbuPortal.dll.config
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\CbuPortal.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\CbuPortal.pdb
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\Antlr3.Runtime.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\CbuPortal.Entity.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\MongoDB.Bson.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\MongoDB.Driver.Core.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\MongoDB.Driver.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\MongoDB.Driver.Legacy.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\Newtonsoft.Json.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.Helpers.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.Mvc.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.Optimization.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.Razor.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.WebPages.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\WebGrease.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\CbuPortal.Entity.pdb
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\MongoDB.Bson.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\MongoDB.Driver.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\MongoDB.Driver.Core.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\MongoDB.Driver.Legacy.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.Helpers.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.Mvc.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.Optimization.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.Razor.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.WebPages.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\Antlr3.Runtime.pdb
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\bin\Newtonsoft.Json.xml
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\obj\Debug\CbuPortal.csprojResolveAssemblyReference.cache
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\obj\Debug\CbuPortal.dll
+C:\Users\Oğuzhan\Downloads\Projects\Projects\CbuPortal\obj\Debug\CbuPortal.pdb
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\csc.exe
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\vbc.exe
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\VBCSCompiler.exe
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\CbuPortal.dll.config
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\CbuPortal.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\CbuPortal.pdb
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\Antlr3.Runtime.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\CbuPortal.Entity.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\MongoDB.Bson.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\MongoDB.Driver.Core.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\MongoDB.Driver.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\MongoDB.Driver.Legacy.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\Newtonsoft.Json.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.Helpers.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.Mvc.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.Optimization.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.Razor.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.WebPages.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\WebGrease.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\CbuPortal.Entity.pdb
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\MongoDB.Bson.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\MongoDB.Driver.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\MongoDB.Driver.Core.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\MongoDB.Driver.Legacy.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.Helpers.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.Mvc.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.Optimization.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.Razor.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.WebPages.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\Antlr3.Runtime.pdb
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\bin\Newtonsoft.Json.xml
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\obj\Debug\CbuPortal.csprojResolveAssemblyReference.cache
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\obj\Debug\CbuPortal.dll
+C:\Users\Oğuzhan\Desktop\Dersler\Projects\Projects\CbuPortal\obj\Debug\CbuPortal.pdb

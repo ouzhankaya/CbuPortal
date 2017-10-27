@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50634/NotificationEvents.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson" />
+  <xs:complexType name="ArrayOftblNotificationsInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblNotificationsInformation" nillable="true" type="tns:tblNotificationsInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblNotificationsInformation" nillable="true" type="tns:ArrayOftblNotificationsInformation" />
+  <xs:complexType name="tblNotificationsInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NotificationInfo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="NotificationObjectID" type="q1:ObjectId" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="NotificationPostUserID" type="q2:ObjectId" />
+      <xs:element minOccurs="0" name="NotificationPostUserNameSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationPostUserProfilePhoto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationSeen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowProfile" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="UserID" type="q3:ObjectId" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q4:ObjectId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblNotificationsInformation" nillable="true" type="tns:tblNotificationsInformation" />
+  <xs:complexType name="tblShare">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SharingDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SharingImages" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SharingText" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="UserID" type="q5:ObjectId" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q6:ObjectId" />
+      <xs:element minOccurs="0" name="tblSharesComments" nillable="true" type="tns:ArrayOftblSharesComment" />
+      <xs:element minOccurs="0" name="tblSharesLikes" nillable="true" type="tns:ArrayOftblSharesLike" />
+      <xs:element minOccurs="0" name="tblSharesLikes1" nillable="true" type="tns:ArrayOftblSharesLike" />
+      <xs:element minOccurs="0" name="tblTags" nillable="true" type="tns:ArrayOftblTag" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblShare" nillable="true" type="tns:tblShare" />
+  <xs:complexType name="ArrayOftblSharesComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblSharesComment" nillable="true" type="tns:tblSharesComment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblSharesComment" nillable="true" type="tns:ArrayOftblSharesComment" />
+  <xs:complexType name="tblSharesComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SharesCommentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SharesCommentText" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="SharesCommentUsersID" type="q7:ObjectId" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="SharingID" type="q8:ObjectId" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q9:ObjectId" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblShare" nillable="true" type="tns:tblShare" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblSharesComment" nillable="true" type="tns:tblSharesComment" />
+  <xs:complexType name="ArrayOftblNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblNotification" nillable="true" type="tns:tblNotification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblNotification" nillable="true" type="tns:ArrayOftblNotification" />
+  <xs:complexType name="tblNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FollowRequestID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FollowingID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NotificationID" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationSeen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProjectApplicationID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionAnserwsID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionAnwersAndDislikeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionLikeAndDislikeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SharesCommentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SharesLikeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SkillsValidationID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblFollowRequest" nillable="true" type="tns:tblFollowRequest" />
+      <xs:element minOccurs="0" name="tblFollowing" nillable="true" type="tns:tblFollowing" />
+      <xs:element minOccurs="0" name="tblProjectApplication" nillable="true" type="tns:tblProjectApplication" />
+      <xs:element minOccurs="0" name="tblQuestionAnswer" nillable="true" type="tns:tblQuestionAnswer" />
+      <xs:element minOccurs="0" name="tblQuestionAnwersAndDislike" nillable="true" type="tns:tblQuestionAnwersAndDislike" />
+      <xs:element minOccurs="0" name="tblQuestionLikeAndDislike" nillable="true" type="tns:tblQuestionLikeAndDislike" />
+      <xs:element minOccurs="0" name="tblSharesComment" nillable="true" type="tns:tblSharesComment" />
+      <xs:element minOccurs="0" name="tblSharesLike" nillable="true" type="tns:tblSharesLike" />
+      <xs:element minOccurs="0" name="tblSkillsValidation" nillable="true" type="tns:tblSkillsValidation" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblNotification" nillable="true" type="tns:tblNotification" />
+  <xs:complexType name="tblFollowRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FollowApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FollowDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FollowID" type="xs:int" />
+      <xs:element minOccurs="0" name="FollowRequestID" type="xs:int" />
+      <xs:element minOccurs="0" name="FollowRequestSeen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblFollowRequest" nillable="true" type="tns:tblFollowRequest" />
+  <xs:complexType name="tblUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserSurname" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="UserTypeID" type="q10:ObjectId" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q11:ObjectId" />
+      <xs:element minOccurs="0" name="tblCompanies" nillable="true" type="tns:ArrayOftblCompany" />
+      <xs:element minOccurs="0" name="tblConferenceCourses" nillable="true" type="tns:ArrayOftblConferenceCours" />
+      <xs:element minOccurs="0" name="tblCourseComments" nillable="true" type="tns:ArrayOftblCourseComment" />
+      <xs:element minOccurs="0" name="tblCourseRates" nillable="true" type="tns:ArrayOftblCourseRate" />
+      <xs:element minOccurs="0" name="tblFollowRequests" nillable="true" type="tns:ArrayOftblFollowRequest" />
+      <xs:element minOccurs="0" name="tblFollowings" nillable="true" type="tns:ArrayOftblFollowing" />
+      <xs:element minOccurs="0" name="tblHobbies" nillable="true" type="tns:ArrayOftblHobby" />
+      <xs:element minOccurs="0" name="tblInterViewAnswers" nillable="true" type="tns:ArrayOftblInterViewAnswer" />
+      <xs:element minOccurs="0" name="tblJobApplications" nillable="true" type="tns:ArrayOftblJobApplication" />
+      <xs:element minOccurs="0" name="tblMessages" nillable="true" type="tns:ArrayOftblMessage" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblOldProjects" nillable="true" type="tns:ArrayOftblOldProject" />
+      <xs:element minOccurs="0" name="tblPersonelEducations" nillable="true" type="tns:ArrayOftblPersonelEducation" />
+      <xs:element minOccurs="0" name="tblProfiles" nillable="true" type="tns:ArrayOftblProfile" />
+      <xs:element minOccurs="0" name="tblProjectAds" nillable="true" type="tns:ArrayOftblProjectAd" />
+      <xs:element minOccurs="0" name="tblProjectApplication" nillable="true" type="tns:tblProjectApplication" />
+      <xs:element minOccurs="0" name="tblQuestionAnswers" nillable="true" type="tns:ArrayOftblQuestionAnswer" />
+      <xs:element minOccurs="0" name="tblQuestionAnwersAndDislikes" nillable="true" type="tns:ArrayOftblQuestionAnwersAndDislike" />
+      <xs:element minOccurs="0" name="tblQuestionLikeAndDislikes" nillable="true" type="tns:ArrayOftblQuestionLikeAndDislike" />
+      <xs:element minOccurs="0" name="tblQuestions" nillable="true" type="tns:ArrayOftblQuestion" />
+      <xs:element minOccurs="0" name="tblReferences" nillable="true" type="tns:ArrayOftblReference" />
+      <xs:element minOccurs="0" name="tblShares" nillable="true" type="tns:ArrayOftblShare" />
+      <xs:element minOccurs="0" name="tblSharesComments" nillable="true" type="tns:ArrayOftblSharesComment" />
+      <xs:element minOccurs="0" name="tblSharesLikes" nillable="true" type="tns:ArrayOftblSharesLike" />
+      <xs:element minOccurs="0" name="tblSharesLikes1" nillable="true" type="tns:ArrayOftblSharesLike" />
+      <xs:element minOccurs="0" name="tblSkillsValidations" nillable="true" type="tns:ArrayOftblSkillsValidation" />
+      <xs:element minOccurs="0" name="tblUserLanguages" nillable="true" type="tns:ArrayOftblUserLanguage" />
+      <xs:element minOccurs="0" name="tblUserSkills" nillable="true" type="tns:ArrayOftblUserSkill" />
+      <xs:element minOccurs="0" name="tblUserType" nillable="true" type="tns:tblUserType" />
+      <xs:element minOccurs="0" name="tblUsersCourses" nillable="true" type="tns:ArrayOftblUsersCours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblUser" nillable="true" type="tns:tblUser" />
+  <xs:complexType name="ArrayOftblCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblCompany" nillable="true" type="tns:tblCompany" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblCompany" nillable="true" type="tns:ArrayOftblCompany" />
+  <xs:complexType name="tblCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyAbout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblJobs" nillable="true" type="tns:ArrayOftblJob" />
+      <xs:element minOccurs="0" name="tblProjectAds" nillable="true" type="tns:ArrayOftblProjectAd" />
+      <xs:element minOccurs="0" name="tblProjectApplication" nillable="true" type="tns:tblProjectApplication" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCompany" nillable="true" type="tns:tblCompany" />
+  <xs:complexType name="ArrayOftblJob">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblJob" nillable="true" type="tns:tblJob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblJob" nillable="true" type="tns:ArrayOftblJob" />
+  <xs:complexType name="tblJob">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="DistrictID" type="xs:int" />
+      <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobFinishDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobID" type="xs:int" />
+      <xs:element minOccurs="0" name="JobStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobStatu" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PersonelNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QualificationsText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectorID" type="xs:int" />
+      <xs:element minOccurs="0" name="WorksPositionID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCompany" nillable="true" type="tns:tblCompany" />
+      <xs:element minOccurs="0" name="tblDistrict" nillable="true" type="tns:tblDistrict" />
+      <xs:element minOccurs="0" name="tblInterViews" nillable="true" type="tns:ArrayOftblInterView" />
+      <xs:element minOccurs="0" name="tblJobApplications" nillable="true" type="tns:ArrayOftblJobApplication" />
+      <xs:element minOccurs="0" name="tblJobOperationTypes" nillable="true" type="tns:ArrayOftblJobOperationType" />
+      <xs:element minOccurs="0" name="tblJobsDepartments" nillable="true" type="tns:ArrayOftblJobsDepartment" />
+      <xs:element minOccurs="0" name="tblJobsDisableds" nillable="true" type="tns:ArrayOftblJobsDisabled" />
+      <xs:element minOccurs="0" name="tblJobsEducationLevels" nillable="true" type="tns:ArrayOftblJobsEducationLevel" />
+      <xs:element minOccurs="0" name="tblJobsSkils" nillable="true" type="tns:ArrayOftblJobsSkil" />
+      <xs:element minOccurs="0" name="tblSector" nillable="true" type="tns:tblSector" />
+      <xs:element minOccurs="0" name="tblWorksPosition" nillable="true" type="tns:tblWorksPosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblJob" nillable="true" type="tns:tblJob" />
+  <xs:complexType name="tblDistrict">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DistrictID" type="xs:int" />
+      <xs:element minOccurs="0" name="DistrictName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvinceID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblJobs" nillable="true" type="tns:ArrayOftblJob" />
+      <xs:element minOccurs="0" name="tblProfiles" nillable="true" type="tns:ArrayOftblProfile" />
+      <xs:element minOccurs="0" name="tblProvince" nillable="true" type="tns:tblProvince" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblDistrict" nillable="true" type="tns:tblDistrict" />
+  <xs:complexType name="ArrayOftblProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblProfile" nillable="true" type="tns:tblProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblProfile" nillable="true" type="tns:ArrayOftblProfile" />
+  <xs:complexType name="tblProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AboutMe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Adres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Adress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Avatar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Birtdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ChatStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisabledID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DisabledValue" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="DistrictID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProfilePrivacy" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="UserID" type="q12:ObjectId" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q13:ObjectId" />
+      <xs:element minOccurs="0" name="tblDisabledStatu" nillable="true" type="tns:tblDisabledStatu" />
+      <xs:element minOccurs="0" name="tblDistrict" nillable="true" type="tns:tblDistrict" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblProfile" nillable="true" type="tns:tblProfile" />
+  <xs:complexType name="tblDisabledStatu">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisabledID" type="xs:int" />
+      <xs:element minOccurs="0" name="DisabledName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblJobsDisableds" nillable="true" type="tns:ArrayOftblJobsDisabled" />
+      <xs:element minOccurs="0" name="tblProfiles" nillable="true" type="tns:ArrayOftblProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblDisabledStatu" nillable="true" type="tns:tblDisabledStatu" />
+  <xs:complexType name="ArrayOftblJobsDisabled">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblJobsDisabled" nillable="true" type="tns:tblJobsDisabled" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblJobsDisabled" nillable="true" type="tns:ArrayOftblJobsDisabled" />
+  <xs:complexType name="tblJobsDisabled">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisabledID" type="xs:int" />
+      <xs:element minOccurs="0" name="JobID" type="xs:int" />
+      <xs:element minOccurs="0" name="JobsDisabledID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblDisabledStatu" nillable="true" type="tns:tblDisabledStatu" />
+      <xs:element minOccurs="0" name="tblJob" nillable="true" type="tns:tblJob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblJobsDisabled" nillable="true" type="tns:tblJobsDisabled" />
+  <xs:complexType name="tblProvince">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProvinceID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProvinceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblCountry" nillable="true" type="tns:tblCountry" />
+      <xs:element minOccurs="0" name="tblDistricts" nillable="true" type="tns:ArrayOftblDistrict" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblProvince" nillable="true" type="tns:tblProvince" />
+  <xs:complexType name="tblCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblProvinces" nillable="true" type="tns:ArrayOftblProvince" />
+      <xs:element minOccurs="0" name="tblUniversities" nillable="true" type="tns:ArrayOftblUniversity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCountry" nillable="true" type="tns:tblCountry" />
+  <xs:complexType name="ArrayOftblProvince">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblProvince" nillable="true" type="tns:tblProvince" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblProvince" nillable="true" type="tns:ArrayOftblProvince" />
+  <xs:complexType name="ArrayOftblUniversity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblUniversity" nillable="true" type="tns:tblUniversity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblUniversity" nillable="true" type="tns:ArrayOftblUniversity" />
+  <xs:complexType name="tblUniversity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="UniversityID" type="xs:int" />
+      <xs:element minOccurs="0" name="UniversityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblCountry" nillable="true" type="tns:tblCountry" />
+      <xs:element minOccurs="0" name="tblFaculties" nillable="true" type="tns:ArrayOftblFaculty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblUniversity" nillable="true" type="tns:tblUniversity" />
+  <xs:complexType name="ArrayOftblFaculty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblFaculty" nillable="true" type="tns:tblFaculty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblFaculty" nillable="true" type="tns:ArrayOftblFaculty" />
+  <xs:complexType name="tblFaculty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FacultyID" type="xs:int" />
+      <xs:element minOccurs="0" name="FacultyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UniversityID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblSections" nillable="true" type="tns:ArrayOftblSection" />
+      <xs:element minOccurs="0" name="tblUniversity" nillable="true" type="tns:tblUniversity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblFaculty" nillable="true" type="tns:tblFaculty" />
+  <xs:complexType name="ArrayOftblSection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblSection" nillable="true" type="tns:tblSection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblSection" nillable="true" type="tns:ArrayOftblSection" />
+  <xs:complexType name="tblSection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FacultyID" type="xs:int" />
+      <xs:element minOccurs="0" name="SectionID" type="xs:int" />
+      <xs:element minOccurs="0" name="SectionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblFaculty" nillable="true" type="tns:tblFaculty" />
+      <xs:element minOccurs="0" name="tblPersonelEducations" nillable="true" type="tns:ArrayOftblPersonelEducation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblSection" nillable="true" type="tns:tblSection" />
+  <xs:complexType name="ArrayOftblPersonelEducation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblPersonelEducation" nillable="true" type="tns:tblPersonelEducation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblPersonelEducation" nillable="true" type="tns:ArrayOftblPersonelEducation" />
+  <xs:complexType name="tblPersonelEducation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FinishDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PersonelEducationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonelEducationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="SectionID" type="xs:int" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblPersonelEducationType" nillable="true" type="tns:tblPersonelEducationType" />
+      <xs:element minOccurs="0" name="tblSection" nillable="true" type="tns:tblSection" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblPersonelEducation" nillable="true" type="tns:tblPersonelEducation" />
+  <xs:complexType name="tblPersonelEducationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PersonelEducationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonelEducationTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblJobsEducationLevels" nillable="true" type="tns:ArrayOftblJobsEducationLevel" />
+      <xs:element minOccurs="0" name="tblPersonelEducations" nillable="true" type="tns:ArrayOftblPersonelEducation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblPersonelEducationType" nillable="true" type="tns:tblPersonelEducationType" />
+  <xs:complexType name="ArrayOftblJobsEducationLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblJobsEducationLevel" nillable="true" type="tns:tblJobsEducationLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblJobsEducationLevel" nillable="true" type="tns:ArrayOftblJobsEducationLevel" />
+  <xs:complexType name="tblJobsEducationLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EducationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="JobID" type="xs:int" />
+      <xs:element minOccurs="0" name="JobsEducationLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblJob" nillable="true" type="tns:tblJob" />
+      <xs:element minOccurs="0" name="tblPersonelEducationType" nillable="true" type="tns:tblPersonelEducationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblJobsEducationLevel" nillable="true" type="tns:tblJobsEducationLevel" />
+  <xs:complexType name="ArrayOftblDistrict">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblDistrict" nillable="true" type="tns:tblDistrict" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblDistrict" nillable="true" type="tns:ArrayOftblDistrict" />
+  <xs:complexType name="ArrayOftblInterView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblInterView" nillable="true" type="tns:tblInterView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblInterView" nillable="true" type="tns:ArrayOftblInterView" />
+  <xs:complexType name="tblInterView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InterviewID" type="xs:int" />
+      <xs:element minOccurs="0" name="InterviewQues" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tblInterViewAnswers" nillable="true" type="tns:ArrayOftblInterViewAnswer" />
+      <xs:element minOccurs="0" name="tblJob" nillable="true" type="tns:tblJob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblInterView" nillable="true" type="tns:tblInterView" />
+  <xs:complexType name="ArrayOftblInterViewAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblInterViewAnswer" nillable="true" type="tns:tblInterViewAnswer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblInterViewAnswer" nillable="true" type="tns:ArrayOftblInterViewAnswer" />
+  <xs:complexType name="tblInterViewAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InterViewAnswers" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterViewAnswersID" type="xs:int" />
+      <xs:element minOccurs="0" name="InterviewID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InterviweFileExtends" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuesAnswersFinish" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="QuesAnswersStart" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tblInterView" nillable="true" type="tns:tblInterView" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblInterViewAnswer" nillable="true" type="tns:tblInterViewAnswer" />
+  <xs:complexType name="ArrayOftblJobApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblJobApplication" nillable="true" type="tns:tblJobApplication" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblJobApplication" nillable="true" type="tns:ArrayOftblJobApplication" />
+  <xs:complexType name="tblJobApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobApplicationsID" type="xs:int" />
+      <xs:element minOccurs="0" name="JobID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblJob" nillable="true" type="tns:tblJob" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblJobApplication" nillable="true" type="tns:tblJobApplication" />
+  <xs:complexType name="ArrayOftblJobOperationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblJobOperationType" nillable="true" type="tns:tblJobOperationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblJobOperationType" nillable="true" type="tns:ArrayOftblJobOperationType" />
+  <xs:complexType name="tblJobOperationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JobID" type="xs:int" />
+      <xs:element minOccurs="0" name="JobOperationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="OperationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblJob" nillable="true" type="tns:tblJob" />
+      <xs:element minOccurs="0" name="tblOperationType" nillable="true" type="tns:tblOperationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblJobOperationType" nillable="true" type="tns:tblJobOperationType" />
+  <xs:complexType name="tblOperationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OperationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="OperationTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblJobOperationTypes" nillable="true" type="tns:ArrayOftblJobOperationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblOperationType" nillable="true" type="tns:tblOperationType" />
+  <xs:complexType name="ArrayOftblJobsDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblJobsDepartment" nillable="true" type="tns:tblJobsDepartment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblJobsDepartment" nillable="true" type="tns:ArrayOftblJobsDepartment" />
+  <xs:complexType name="tblJobsDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartmentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="JobID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="JobsDepartment" type="xs:int" />
+      <xs:element minOccurs="0" name="tblDepartment" nillable="true" type="tns:tblDepartment" />
+      <xs:element minOccurs="0" name="tblJob" nillable="true" type="tns:tblJob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblJobsDepartment" nillable="true" type="tns:tblJobsDepartment" />
+  <xs:complexType name="tblDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblJobsDepartments" nillable="true" type="tns:ArrayOftblJobsDepartment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblDepartment" nillable="true" type="tns:tblDepartment" />
+  <xs:complexType name="ArrayOftblJobsSkil">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblJobsSkil" nillable="true" type="tns:tblJobsSkil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblJobsSkil" nillable="true" type="tns:ArrayOftblJobsSkil" />
+  <xs:complexType name="tblJobsSkil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JobID" type="xs:int" />
+      <xs:element minOccurs="0" name="JobskilsID" type="xs:int" />
+      <xs:element minOccurs="0" name="SkilsDetailsID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblJob" nillable="true" type="tns:tblJob" />
+      <xs:element minOccurs="0" name="tblSkilsDetail" nillable="true" type="tns:tblSkilsDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblJobsSkil" nillable="true" type="tns:tblJobsSkil" />
+  <xs:complexType name="tblSkilsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SkillID" type="xs:int" />
+      <xs:element minOccurs="0" name="SkilsDetailsID" type="xs:int" />
+      <xs:element minOccurs="0" name="SkilsDetailsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblJobsSkils" nillable="true" type="tns:ArrayOftblJobsSkil" />
+      <xs:element minOccurs="0" name="tblSkill" nillable="true" type="tns:tblSkill" />
+      <xs:element minOccurs="0" name="tblUserSkills" nillable="true" type="tns:ArrayOftblUserSkill" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblSkilsDetail" nillable="true" type="tns:tblSkilsDetail" />
+  <xs:complexType name="tblSkill">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SkillID" type="xs:int" />
+      <xs:element minOccurs="0" name="SkillsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblSkilsDetails" nillable="true" type="tns:ArrayOftblSkilsDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblSkill" nillable="true" type="tns:tblSkill" />
+  <xs:complexType name="ArrayOftblSkilsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblSkilsDetail" nillable="true" type="tns:tblSkilsDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblSkilsDetail" nillable="true" type="tns:ArrayOftblSkilsDetail" />
+  <xs:complexType name="ArrayOftblUserSkill">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblUserSkill" nillable="true" type="tns:tblUserSkill" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblUserSkill" nillable="true" type="tns:ArrayOftblUserSkill" />
+  <xs:complexType name="tblUserSkill">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SkilsDetailsID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserSkillsID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblSkillsValidations" nillable="true" type="tns:ArrayOftblSkillsValidation" />
+      <xs:element minOccurs="0" name="tblSkilsDetail" nillable="true" type="tns:tblSkilsDetail" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblUserSkill" nillable="true" type="tns:tblUserSkill" />
+  <xs:complexType name="ArrayOftblSkillsValidation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblSkillsValidation" nillable="true" type="tns:tblSkillsValidation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblSkillsValidation" nillable="true" type="tns:ArrayOftblSkillsValidation" />
+  <xs:complexType name="tblSkillsValidation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SkillsValidationID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserSkillsID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+      <xs:element minOccurs="0" name="tblUserSkill" nillable="true" type="tns:tblUserSkill" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblSkillsValidation" nillable="true" type="tns:tblSkillsValidation" />
+  <xs:complexType name="tblSector">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SectorID" type="xs:int" />
+      <xs:element minOccurs="0" name="SectorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblJobs" nillable="true" type="tns:ArrayOftblJob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblSector" nillable="true" type="tns:tblSector" />
+  <xs:complexType name="tblWorksPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WorksPositionID" type="xs:int" />
+      <xs:element minOccurs="0" name="WorksPositionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblJobs" nillable="true" type="tns:ArrayOftblJob" />
+      <xs:element minOccurs="0" name="tblWorks" nillable="true" type="tns:ArrayOftblWork" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblWorksPosition" nillable="true" type="tns:tblWorksPosition" />
+  <xs:complexType name="ArrayOftblWork">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblWork" nillable="true" type="tns:tblWork" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblWork" nillable="true" type="tns:ArrayOftblWork" />
+  <xs:complexType name="tblWork">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PersonelJobFinishDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PersonelJobName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonelJobStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkID" type="xs:int" />
+      <xs:element minOccurs="0" name="WorksActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WorksPositionID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblOldProjects" nillable="true" type="tns:ArrayOftblOldProject" />
+      <xs:element minOccurs="0" name="tblWorksPosition" nillable="true" type="tns:tblWorksPosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblWork" nillable="true" type="tns:tblWork" />
+  <xs:complexType name="ArrayOftblOldProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblOldProject" nillable="true" type="tns:tblOldProject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblOldProject" nillable="true" type="tns:ArrayOftblOldProject" />
+  <xs:complexType name="tblOldProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OldProjectDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OldProjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="OldProjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Teknolojis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsersID" type="xs:int" />
+      <xs:element minOccurs="0" name="WorksID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+      <xs:element minOccurs="0" name="tblWork" nillable="true" type="tns:tblWork" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblOldProject" nillable="true" type="tns:tblOldProject" />
+  <xs:complexType name="ArrayOftblProjectAd">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblProjectAd" nillable="true" type="tns:tblProjectAd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblProjectAd" nillable="true" type="tns:ArrayOftblProjectAd" />
+  <xs:complexType name="tblProjectAd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProjectAbout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectAwardID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProjectDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectSenderID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProjectState" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tblCompany" nillable="true" type="tns:tblCompany" />
+      <xs:element minOccurs="0" name="tblProjectApplications" nillable="true" type="tns:ArrayOftblProjectApplication" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblProjectAd" nillable="true" type="tns:tblProjectAd" />
+  <xs:complexType name="ArrayOftblProjectApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblProjectApplication" nillable="true" type="tns:tblProjectApplication" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblProjectApplication" nillable="true" type="tns:ArrayOftblProjectApplication" />
+  <xs:complexType name="tblProjectApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaxMoney" type="xs:double" />
+      <xs:element minOccurs="0" name="MinMoney" type="xs:double" />
+      <xs:element minOccurs="0" name="ProjectApplicationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProjectApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProjectAwardID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCompany" nillable="true" type="tns:tblCompany" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblProjectAd" nillable="true" type="tns:tblProjectAd" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblProjectApplication" nillable="true" type="tns:tblProjectApplication" />
+  <xs:complexType name="ArrayOftblConferenceCours">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblConferenceCours" nillable="true" type="tns:tblConferenceCours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblConferenceCours" nillable="true" type="tns:ArrayOftblConferenceCours" />
+  <xs:complexType name="tblConferenceCours">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConferenceCoursDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ConferenceCoursID" type="xs:int" />
+      <xs:element minOccurs="0" name="ConferenceCoursName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblConferenceCours" nillable="true" type="tns:tblConferenceCours" />
+  <xs:complexType name="ArrayOftblCourseComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblCourseComment" nillable="true" type="tns:tblCourseComment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblCourseComment" nillable="true" type="tns:ArrayOftblCourseComment" />
+  <xs:complexType name="tblCourseComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AnsweredCommentID" type="xs:int" />
+      <xs:element minOccurs="0" name="CommentContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseCommentID" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseCommentStatusID" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCours" nillable="true" type="tns:tblCours" />
+      <xs:element minOccurs="0" name="tblCourseComment1" nillable="true" type="tns:ArrayOftblCourseComment" />
+      <xs:element minOccurs="0" name="tblCourseComment2" nillable="true" type="tns:tblCourseComment" />
+      <xs:element minOccurs="0" name="tblCourseCommentStatu" nillable="true" type="tns:tblCourseCommentStatu" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCourseComment" nillable="true" type="tns:tblCourseComment" />
+  <xs:complexType name="tblCours">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseStatusID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCategory" nillable="true" type="tns:tblCategory" />
+      <xs:element minOccurs="0" name="tblCourseComments" nillable="true" type="tns:ArrayOftblCourseComment" />
+      <xs:element minOccurs="0" name="tblCourseKeywords" nillable="true" type="tns:ArrayOftblCourseKeyword1" />
+      <xs:element minOccurs="0" name="tblCourseLevel" nillable="true" type="tns:tblCourseLevel" />
+      <xs:element minOccurs="0" name="tblCourseRates" nillable="true" type="tns:ArrayOftblCourseRate" />
+      <xs:element minOccurs="0" name="tblCourseStatu" nillable="true" type="tns:tblCourseStatu" />
+      <xs:element minOccurs="0" name="tblLessons" nillable="true" type="tns:ArrayOftblLesson" />
+      <xs:element minOccurs="0" name="tblUsersCourses" nillable="true" type="tns:ArrayOftblUsersCours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCours" nillable="true" type="tns:tblCours" />
+  <xs:complexType name="tblCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentCategoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCategory1" nillable="true" type="tns:ArrayOftblCategory" />
+      <xs:element minOccurs="0" name="tblCategory2" nillable="true" type="tns:tblCategory" />
+      <xs:element minOccurs="0" name="tblCourses" nillable="true" type="tns:ArrayOftblCours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCategory" nillable="true" type="tns:tblCategory" />
+  <xs:complexType name="ArrayOftblCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblCategory" nillable="true" type="tns:tblCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblCategory" nillable="true" type="tns:ArrayOftblCategory" />
+  <xs:complexType name="ArrayOftblCours">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblCours" nillable="true" type="tns:tblCours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblCours" nillable="true" type="tns:ArrayOftblCours" />
+  <xs:complexType name="ArrayOftblCourseKeyword1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblCourseKeyword1" nillable="true" type="tns:tblCourseKeyword1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblCourseKeyword1" nillable="true" type="tns:ArrayOftblCourseKeyword1" />
+  <xs:complexType name="tblCourseKeyword1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseKeywordID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseKeywordsID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCours" nillable="true" type="tns:tblCours" />
+      <xs:element minOccurs="0" name="tblCourseKeyword" nillable="true" type="tns:tblCourseKeyword" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCourseKeyword1" nillable="true" type="tns:tblCourseKeyword1" />
+  <xs:complexType name="tblCourseKeyword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseKeyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseKeywordID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCourseKeywords" nillable="true" type="tns:ArrayOftblCourseKeyword1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCourseKeyword" nillable="true" type="tns:tblCourseKeyword" />
+  <xs:complexType name="tblCourseLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCourses" nillable="true" type="tns:ArrayOftblCours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCourseLevel" nillable="true" type="tns:tblCourseLevel" />
+  <xs:complexType name="ArrayOftblCourseRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblCourseRate" nillable="true" type="tns:tblCourseRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblCourseRate" nillable="true" type="tns:ArrayOftblCourseRate" />
+  <xs:complexType name="tblCourseRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseRateID" type="xs:int" />
+      <xs:element minOccurs="0" name="Rate" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="RatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCours" nillable="true" type="tns:tblCours" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCourseRate" nillable="true" type="tns:tblCourseRate" />
+  <xs:complexType name="tblCourseStatu">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseStatusID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCourses" nillable="true" type="tns:ArrayOftblCours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCourseStatu" nillable="true" type="tns:tblCourseStatu" />
+  <xs:complexType name="ArrayOftblLesson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblLesson" nillable="true" type="tns:tblLesson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblLesson" nillable="true" type="tns:ArrayOftblLesson" />
+  <xs:complexType name="tblLesson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LessonID" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VideoDuration" type="xs:int" />
+      <xs:element minOccurs="0" name="VideoLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblCours" nillable="true" type="tns:tblCours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblLesson" nillable="true" type="tns:tblLesson" />
+  <xs:complexType name="ArrayOftblUsersCours">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblUsersCours" nillable="true" type="tns:tblUsersCours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblUsersCours" nillable="true" type="tns:ArrayOftblUsersCours" />
+  <xs:complexType name="tblUsersCours">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoughtDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserCoursesID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblCours" nillable="true" type="tns:tblCours" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblUsersCours" nillable="true" type="tns:tblUsersCours" />
+  <xs:complexType name="tblCourseCommentStatu">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseCommentStatusID" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseCommentStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblCourseComments" nillable="true" type="tns:ArrayOftblCourseComment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblCourseCommentStatu" nillable="true" type="tns:tblCourseCommentStatu" />
+  <xs:complexType name="ArrayOftblFollowRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblFollowRequest" nillable="true" type="tns:tblFollowRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblFollowRequest" nillable="true" type="tns:ArrayOftblFollowRequest" />
+  <xs:complexType name="ArrayOftblFollowing">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblFollowing" nillable="true" type="tns:tblFollowing" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblFollowing" nillable="true" type="tns:ArrayOftblFollowing" />
+  <xs:complexType name="tblFollowing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FollowDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="FollowingUserID" type="q14:ObjectId" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="UserID" type="q15:ObjectId" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q16:ObjectId" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblFollowing" nillable="true" type="tns:tblFollowing" />
+  <xs:complexType name="ArrayOftblHobby">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblHobby" nillable="true" type="tns:tblHobby" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblHobby" nillable="true" type="tns:ArrayOftblHobby" />
+  <xs:complexType name="tblHobby">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HobbyID" type="xs:int" />
+      <xs:element minOccurs="0" name="HobbyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblHobby" nillable="true" type="tns:tblHobby" />
+  <xs:complexType name="ArrayOftblMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblMessage" nillable="true" type="tns:tblMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblMessage" nillable="true" type="tns:ArrayOftblMessage" />
+  <xs:complexType name="tblMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MessageID" type="xs:int" />
+      <xs:element minOccurs="0" name="MessagePostID" type="xs:int" />
+      <xs:element minOccurs="0" name="MessageText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Seen" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblMessage" nillable="true" type="tns:tblMessage" />
+  <xs:complexType name="ArrayOftblQuestionAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblQuestionAnswer" nillable="true" type="tns:tblQuestionAnswer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblQuestionAnswer" nillable="true" type="tns:ArrayOftblQuestionAnswer" />
+  <xs:complexType name="tblQuestionAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accuracy" type="xs:int" />
+      <xs:element minOccurs="0" name="AnswerText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnswerUserID" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionAnserwsID" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblQuestion" nillable="true" type="tns:tblQuestion" />
+      <xs:element minOccurs="0" name="tblQuestionAnwersAndDislikes" nillable="true" type="tns:ArrayOftblQuestionAnwersAndDislike" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuestionAnswer" nillable="true" type="tns:tblQuestionAnswer" />
+  <xs:complexType name="tblQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QuestionID" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionImage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblQuestionAnswers" nillable="true" type="tns:ArrayOftblQuestionAnswer" />
+      <xs:element minOccurs="0" name="tblQuestionAreaType" nillable="true" type="tns:tblQuestionAreaType" />
+      <xs:element minOccurs="0" name="tblQuestionLikeAndDislikes" nillable="true" type="tns:ArrayOftblQuestionLikeAndDislike" />
+      <xs:element minOccurs="0" name="tblTags" nillable="true" type="tns:ArrayOftblTag" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuestion" nillable="true" type="tns:tblQuestion" />
+  <xs:complexType name="tblQuestionAreaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblQuestions" nillable="true" type="tns:ArrayOftblQuestion" />
+      <xs:element minOccurs="0" name="tblQuestionsArea" nillable="true" type="tns:tblQuestionsArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuestionAreaType" nillable="true" type="tns:tblQuestionAreaType" />
+  <xs:complexType name="ArrayOftblQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblQuestion" nillable="true" type="tns:tblQuestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblQuestion" nillable="true" type="tns:ArrayOftblQuestion" />
+  <xs:complexType name="tblQuestionsArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OuestionAreaID" type="xs:int" />
+      <xs:element minOccurs="0" name="OuestionAreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblQuestionAreaTypes" nillable="true" type="tns:ArrayOftblQuestionAreaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuestionsArea" nillable="true" type="tns:tblQuestionsArea" />
+  <xs:complexType name="ArrayOftblQuestionAreaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblQuestionAreaType" nillable="true" type="tns:tblQuestionAreaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblQuestionAreaType" nillable="true" type="tns:ArrayOftblQuestionAreaType" />
+  <xs:complexType name="ArrayOftblQuestionLikeAndDislike">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblQuestionLikeAndDislike" nillable="true" type="tns:tblQuestionLikeAndDislike" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblQuestionLikeAndDislike" nillable="true" type="tns:ArrayOftblQuestionLikeAndDislike" />
+  <xs:complexType name="tblQuestionLikeAndDislike">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QuestionID" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionLike" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QuestionLikeAndDislikeID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblQuestion" nillable="true" type="tns:tblQuestion" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuestionLikeAndDislike" nillable="true" type="tns:tblQuestionLikeAndDislike" />
+  <xs:complexType name="ArrayOftblTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblTag" nillable="true" type="tns:tblTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblTag" nillable="true" type="tns:ArrayOftblTag" />
+  <xs:complexType name="tblTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QuestionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SharingID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TagID" type="xs:int" />
+      <xs:element minOccurs="0" name="TagName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblQuestion" nillable="true" type="tns:tblQuestion" />
+      <xs:element minOccurs="0" name="tblShare" nillable="true" type="tns:tblShare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblTag" nillable="true" type="tns:tblTag" />
+  <xs:complexType name="ArrayOftblQuestionAnwersAndDislike">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblQuestionAnwersAndDislike" nillable="true" type="tns:tblQuestionAnwersAndDislike" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblQuestionAnwersAndDislike" nillable="true" type="tns:ArrayOftblQuestionAnwersAndDislike" />
+  <xs:complexType name="tblQuestionAnwersAndDislike">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QuestionAnserwsID" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionAnserwsLike" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QuestionAnwersAndDislikeID" type="xs:int" />
+      <xs:element minOccurs="0" name="UsersID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblQuestionAnswer" nillable="true" type="tns:tblQuestionAnswer" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuestionAnwersAndDislike" nillable="true" type="tns:tblQuestionAnwersAndDislike" />
+  <xs:complexType name="ArrayOftblReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblReference" nillable="true" type="tns:tblReference" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblReference" nillable="true" type="tns:ArrayOftblReference" />
+  <xs:complexType name="tblReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReferenceEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReferenceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblReference" nillable="true" type="tns:tblReference" />
+  <xs:complexType name="ArrayOftblShare">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblShare" nillable="true" type="tns:tblShare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblShare" nillable="true" type="tns:ArrayOftblShare" />
+  <xs:complexType name="ArrayOftblSharesLike">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblSharesLike" nillable="true" type="tns:tblSharesLike" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblSharesLike" nillable="true" type="tns:ArrayOftblSharesLike" />
+  <xs:complexType name="tblSharesLike">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SharesLikeDate" type="xs:dateTime" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="SharesLikeUserID" type="q17:ObjectId" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="SharingID" type="q18:ObjectId" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q19:ObjectId" />
+      <xs:element minOccurs="0" name="tblNotifications" nillable="true" type="tns:ArrayOftblNotification" />
+      <xs:element minOccurs="0" name="tblShare" nillable="true" type="tns:tblShare" />
+      <xs:element minOccurs="0" name="tblShare1" nillable="true" type="tns:tblShare" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+      <xs:element minOccurs="0" name="tblUser1" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblSharesLike" nillable="true" type="tns:tblSharesLike" />
+  <xs:complexType name="ArrayOftblUserLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblUserLanguage" nillable="true" type="tns:tblUserLanguage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblUserLanguage" nillable="true" type="tns:ArrayOftblUserLanguage" />
+  <xs:complexType name="tblUserLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ForeignLanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserLanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserLanguageLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblForeignLanguage" nillable="true" type="tns:tblForeignLanguage" />
+      <xs:element minOccurs="0" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblUserLanguage" nillable="true" type="tns:tblUserLanguage" />
+  <xs:complexType name="tblForeignLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ForeignLanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="ForeignLanguageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblUserLanguage" nillable="true" type="tns:tblUserLanguage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblForeignLanguage" nillable="true" type="tns:tblForeignLanguage" />
+  <xs:complexType name="tblUserType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblUsers" nillable="true" type="tns:ArrayOftblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblUserType" nillable="true" type="tns:tblUserType" />
+  <xs:complexType name="ArrayOftblUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblUser" nillable="true" type="tns:tblUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblUser" nillable="true" type="tns:ArrayOftblUser" />
+  <xs:complexType name="ArrayOftblSharesCommentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblSharesCommentInformation" nillable="true" type="tns:tblSharesCommentInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblSharesCommentInformation" nillable="true" type="tns:ArrayOftblSharesCommentInformation" />
+  <xs:complexType name="tblSharesCommentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ShareCommentUserNameSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SharesCommentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SharesCommentText" nillable="true" type="xs:string" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="SharesCommentUsersID" type="q20:ObjectId" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="SharingID" type="q21:ObjectId" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q22:ObjectId" />
+      <xs:element minOccurs="0" name="avatar" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblSharesCommentInformation" nillable="true" type="tns:tblSharesCommentInformation" />
+  <xs:complexType name="ArrayOftblShareLikeInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblShareLikeInformation" nillable="true" type="tns:tblShareLikeInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblShareLikeInformation" nillable="true" type="tns:ArrayOftblShareLikeInformation" />
+  <xs:complexType name="tblShareLikeInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ShareLikeUserNameSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SharesLikeDate" type="xs:dateTime" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="SharesLikeUserID" type="q23:ObjectId" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="SharingID" type="q24:ObjectId" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="_id" type="q25:ObjectId" />
+      <xs:element minOccurs="0" name="avatar" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblShareLikeInformation" nillable="true" type="tns:tblShareLikeInformation" />
+</xs:schema>

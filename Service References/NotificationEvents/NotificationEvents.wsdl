@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NotificationEvents" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50634/NotificationEvents.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50634/NotificationEvents.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50634/NotificationEvents.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson" />
+      <xsd:import schemaLocation="http://localhost:50634/NotificationEvents.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" />
+      <xsd:import schemaLocation="http://localhost:50634/NotificationEvents.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INotificationEvents_NotificationAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationAdd" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_NotificationAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_NotificationsTrueGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationsTrueGet" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_NotificationsTrueGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationsTrueGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_NotificationsFalseGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationsFalseGet" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_NotificationsFalseGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationsFalseGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_NotificationsSeem_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationsSeem" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_NotificationsSeem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationsSeemResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_NotificationsGetShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationsGetShare" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_NotificationsGetShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotificationsGetShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_updateAvatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateAvatar" />
+  </wsdl:message>
+  <wsdl:message name="INotificationEvents_updateAvatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateAvatarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INotificationEvents">
+    <wsdl:operation name="NotificationAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationEvents/NotificationAdd" message="tns:INotificationEvents_NotificationAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationEvents/NotificationAddResponse" message="tns:INotificationEvents_NotificationAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificationsTrueGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationEvents/NotificationsTrueGet" message="tns:INotificationEvents_NotificationsTrueGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationEvents/NotificationsTrueGetResponse" message="tns:INotificationEvents_NotificationsTrueGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificationsFalseGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationEvents/NotificationsFalseGet" message="tns:INotificationEvents_NotificationsFalseGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationEvents/NotificationsFalseGetResponse" message="tns:INotificationEvents_NotificationsFalseGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificationsSeem">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationEvents/NotificationsSeem" message="tns:INotificationEvents_NotificationsSeem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationEvents/NotificationsSeemResponse" message="tns:INotificationEvents_NotificationsSeem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificationsGetShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationEvents/NotificationsGetShare" message="tns:INotificationEvents_NotificationsGetShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationEvents/NotificationsGetShareResponse" message="tns:INotificationEvents_NotificationsGetShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAvatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationEvents/updateAvatar" message="tns:INotificationEvents_updateAvatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationEvents/updateAvatarResponse" message="tns:INotificationEvents_updateAvatar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INotificationEvents" type="tns:INotificationEvents">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NotificationAdd">
+      <soap:operation soapAction="http://tempuri.org/INotificationEvents/NotificationAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificationsTrueGet">
+      <soap:operation soapAction="http://tempuri.org/INotificationEvents/NotificationsTrueGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificationsFalseGet">
+      <soap:operation soapAction="http://tempuri.org/INotificationEvents/NotificationsFalseGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificationsSeem">
+      <soap:operation soapAction="http://tempuri.org/INotificationEvents/NotificationsSeem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificationsGetShare">
+      <soap:operation soapAction="http://tempuri.org/INotificationEvents/NotificationsGetShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAvatar">
+      <soap:operation soapAction="http://tempuri.org/INotificationEvents/updateAvatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotificationEvents">
+    <wsdl:port name="BasicHttpBinding_INotificationEvents" binding="tns:BasicHttpBinding_INotificationEvents">
+      <soap:address location="http://localhost:50634/NotificationEvents.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

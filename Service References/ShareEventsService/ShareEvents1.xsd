@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50634/ShareEvents.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" />
+  <xs:import schemaLocation="http://localhost:50634/ShareEvents.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson" />
+  <xs:import schemaLocation="http://localhost:50634/ShareEvents.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+  <xs:element name="shareComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" minOccurs="0" name="userComment" nillable="true" type="q1:tblSharesComment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="shareCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="shareCommentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="shareLike">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" minOccurs="0" name="shareLike" nillable="true" type="q2:tblSharesLike" />
+        <xs:element minOccurs="0" name="shareLikeStatus" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="shareLikeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="shareLikeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setShare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CbuPortal.Entity.Models" minOccurs="0" name="share" nillable="true" type="q3:tblShare" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setShareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setShareResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserShares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="userID" type="q4:ObjectId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserSharesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="getUserSharesResult" nillable="true" type="q5:ArrayOftblShareInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFriendsShares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="userID" type="q6:ObjectId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFriendsSharesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="getFriendsSharesResult" nillable="true" type="q7:ArrayOftblShareInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="userDeleteShare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="shareID" type="q8:ObjectId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="userDeleteShareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userDeleteShareResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="userCommentDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MongoDB.Bson" minOccurs="0" name="commentID" type="q9:ObjectId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="userCommentDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userCommentDeleteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Basic Scout for Managers</title>
+    <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link href="~/Content/toastr.min.css" rel="stylesheet">
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+    <link href="~/Content/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/font-awesome/css/font-awesome.css">
+    <link id="theme-style" rel="stylesheet" href="~/Content/styles.css">
+    <link rel="shortcut icon" href="~/Image/softwaredev-icon.ico">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Javascript -->
+    <script type="text/javascript" src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Scripts/jquery.soap.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.rss.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/getMongoID.js"></script>
+    <!--<script src="~/Scripts/mainjquery.js"></script>
+    <script src="~/Scripts/materialize.min.js"></script>-->
+</head>
+
+<body>
+    <script>
+        var serviceAdress = "http://localhost:50634/";
+        var base_url = "@Url.Content("~/")";
+        var id = "@ViewBag.id";
+        var activeId = "@ViewBag.Activeid"
+    </script>
+    <div class="container">
+        <br>
+        <ul class="social list-inline" style="float:left;">
+            <li><a href="Home" data-hover="Home">Home</a></li>
+            <li><a href="" data-hover="Jobs">Profile</a></li>
+            
+            <!--<li><a href="" data-hover="Q&amp;A"></a></li>-->
+           <!-- <li><a href="" data-hover="Projects">Projects</a></li>-->
+            <!--<li><a href="" data-hover="Education">Education</a></li>-->
+             
+        </ul>
+        <ul class="nav navbar-top-links navbar-right" style="float:right;margin-top:-1em">
+            <li>
+                <div class="search2">
+                    <input type="text" value="Search" id="Searcher" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                    <input type="submit" value="">
+                </div>
+            </li>
+            <li class="dropdown">
+                <a id="btnBildirim" class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                    <i class="fa fa-globe"></i>  <span id="NotCount" class="label label-primary"></span>
+                </a>
+                <ul id="Bildirimler" class="dropdown-menu dropdown-alerts"></ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                    <img id="daire" class="prfl" style="height:38px;" src="~/Image/@ViewBag.ActiveAvatar">
+                </a>
+                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                    <li><a href="Profile">Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a href="~/Login/Logout">Logout</a></li>
+                </ul>
+
+            </li>
+
+        </ul>
+        <br><br>
+    </div>
+    <header class="header">
+        <div class="container">
+            @if (ViewBag.following == null)
+            {
+                <img id="daire" style="width:150px;height:150px ;cursor: pointer; " class="prfl profile-image img-responsive pull-left" src="~/Image/@ViewBag.Avatar" data-toggle="modal" data-target="#myModal">
+            }
+            else
+            {
+                <img id="daire" style="width:150px;height:150px ;" class="prfl profile-image img-responsive pull-left" src="~/Image/@ViewBag.Avatar">
+
+
+            }
+            <div class="profile-content pull-left">
+                <h1 class="name">@ViewBag.FullName</h1>
+                <h2 class="desc">Footballer</h2>
+                <ul class="social list-inline">
+                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                    <li><a href="#"><i class="fa fa-github"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
+                </ul>
+
+            </div><!--//profile-->
+            <div>
+                <br><br><br>
+                @if (ViewBag.following != null)
+                {
+                    if (ViewBag.following == true)
+                    {
+                        <button class="btn btn-white btn-xs" id="btnFollow" onclick="Follow('@ViewBag.id','False')" style="float:right;margin-top:5px"><i class="fa fa-minus"></i>  Unfollow </button>
+                    }
+                    else
+                    {     <button class="btn btn-white btn-xs" id="btnFollow" onclick="Follow('@ViewBag.id','True')" s style="float:right;margin-top:5px"><i class="fa fa-plus"></i> Follow </button>
+
+                    }
+                }
+            </div>
+        </div><!--//container-->
+        <br>
+        <div class="container">
+            <ul class="social list-inline" style="float:left;">
+                <li><a href="Profile" data-hover="Profile">Profile</a></li>
+                <li><a href="" data-hover="About">About</a></li>
+                <li><a href="" data-hover="İmages">İmages</a></li>
+                <li><a href="" data-hover="Videos">Videos</a></li>
+                <li><a href="" data-hover="Training">Training</a></li>
+                <li><a href="" data-hover="Timeline">Timeline</a></li>
+
+            </ul>
+
+        </div>
+    </header><!--//header-->
+    <div class="container sections-wrapper">
+        @RenderBody()
+        <!--//secondary-->
+    </div><!--//row-->
+    <!--//masonry-->
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container text-center">
+            <small class="copyright"></small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+    <div class="modal inmodal in" id="myModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content animated bounceInRight">
+                <div class="modal-body">
+
+                    <div class="form-group" style="overflow:hidden;">
+                        <label>Fotoğraf</label>
+                        <div class="">
+                            <input id="FileUploadPhoto" type="file" style="float:left;margin-top:20px;" name="fileImage">
+                            <img width="64" height="64" id="Profile" style="float:left;" src="~/Image/@ViewBag.Avatar" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" id="Save" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="Hidden" value="@ViewBag.ActiveAvatar" type="hidden" />
+
+    <script>
+        $(function () {
+
+            $("#btnBildirim").click(function () {
+
+                $.ajax({
+                    url: "/Data/SetSeemTrue",
+                    method: "Get",
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+
+
+
+            });
+            $("#Searcher").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        method: "post",
+                        url: "/Data/Arama",
+                        data: { d: request.term },
+                        success: function (data) {
+                            console.log(data);
+                            response($.map(data.Users, function (item) {
+                                return {
+                                    label: item.label,
+                                    sno: item.id,
+                                    img: item.img
+                                };
+                            }));
+
+                        }
+                    });
+                },
+                minLength: 2,
+
+
+            }).autocomplete("instance")._renderItem = function (ul, item) {
+                return $('<li style="height: 55px;">')
+                  .append('<div  style="width:180px;margin-right:0px;height:50px;height:55px; line-height:50px" class="dropdown-messages-box"><a href="/Home/ShowProfile?id=' + item.sno + '" class="pull-left"><img alt="image" class="img-circle" src="/Image/' + item.img + '"/></a><a href="/Home/ShowProfile?id=' + item.sno + '"><strong style="font-size:11px">' + item.label + '</strong></a> </div>')
+                  .appendTo(ul);
+            };
+
+            $.ajax({
+                url: "/Data/BildirimeriAl",
+                method: "POST",
+
+                data: { id: "@ViewBag.Activeid" },
+                success: function (response) {
+                    $("#NotCount").text(response.length);
+
+                    var Notificiations = "";
+                    console.log(response);
+                    $.each(response, function (index, value) {
+                        var d = getId(value.NotificationObjectID);
+                        if (value.ShowProfile)
+                            Notificiations += '<li><div class="dropdown-messages-box"> <a href="/Home/ShowProfile?id=' + d + '" class="pull-left"><img alt="image" class="img-circle" src="/Image/' + value.NotificationPostUserProfilePhoto + '"> </a> <div class="media-body" style="height:50px"><a  style="padding-left: 0px;"href="/Home/ShowProfile?id=' + d + '"><small class="pull-right">46h ago</small> ' + value.NotificationInfo + '. <br> </a></div></div></li>';
+                        else
+                            Notificiations += '<li><div class="dropdown-messages-box"> <a href="/Home/ShoShare?id=' + d + '" class="pull-left"><img alt="image" class="img-circle" src="/Image/' + value.NotificationPostUserProfilePhoto + '"> </a> <div class="media-body" style="height:50px"><a  style="padding-left: 0px;"href="/Home/ShowShare?id=' + d + '"><small class="pull-right">46h ago</small> ' + value.NotificationInfo + '. <br> </a></div></div></li>';
+
+                    })
+
+                    $("#Bildirimler").html(Notificiations);
+
+                }
+            });
+
+        });
+
+        $("#FileUploadPhoto").change("Select", function () {
+            debugger;
+            var formdataDP = new FormData();
+            var fileInputDP = document.getElementById('FileUploadPhoto');
+            if (fileInputDP.files.length > 0) {
+                formdataDP.append(fileInputDP.files[0].name, fileInputDP.files[0]);
+                //Creating an XMLHttpRequest and sending
+                var xhr1 = new XMLHttpRequest();
+                xhr1.open('POST', '/Home/Upload');
+                xhr1.send(formdataDP);
+                xhr1.onreadystatechange = function () {
+                    if (xhr1.readyState == 4 && xhr1.status == 200) {
+                        console.log(xhr1);
+                        $("#Profile").attr("src", "/Image/" + xhr1.responseText.replace(/"/g, ''));
+                        $("#Hidden").val(xhr1.responseText.replace(/"/g, ''));
+
+                        //alert($("#customer_ImageUrl").val());
+                    }
+                }
+
+            }
+        });
+
+        $("#Save").click(function () {
+
+            $.ajax({
+                url: "/Data/ChangeAvatar",
+                method: "Post",
+                data: { Avatar: $("#Hidden").val() },
+                success: function (response) {
+                    $(".prfl").attr("src", "/Image/" + $("#Hidden").val());
+                    $('#myModal').modal('toggle');
+                }
+            });
+
+        });
+        $("#status").keypress(function () {
+            debugger
+            if ($("#status").val() != "") {
+                $("#btnPost").prop('disabled', false);
+            }
+            else {
+
+                $("#btnPost").prop('disabled', true);
+            }
+        });
+        var yorumSil = function (e, Yid) {
+            $.ajax({
+                url: "/Data/YorumSil",
+                method: "Post",
+                data: { id:Yid},
+                success: function (response) {
+                    e.parent().parent().remove();
+                }
+            });
+        }
+        var PaylasimSil = function (e, Pid) {
+            $.ajax({
+                url: "/Data/PaylasimSil",
+                method: "Post",
+                data: { id:Pid},
+                success: function (response) {
+                    e.parent().parent().parent().remove();
+                }
+            });
+
+          }
+    </script>
+
+
+</body>
+
+</html>
+
+
